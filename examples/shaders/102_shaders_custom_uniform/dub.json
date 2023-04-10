@@ -1,0 +1,9 @@
+{
+	"name": "shaders_custom_uniform",
+	"description": "RayLib example.",
+	"license": "Zlib",
+	"dependencies": {
+		"raylib-d": "~>4.5.0",
+	},
+	"libs": [ "raylib" ]
+}
