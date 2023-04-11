@@ -13,6 +13,11 @@
 
 import raylib;
 
+import std.path : dirName, buildNormalizedPath;
+import std.file : thisExePath;
+import std.string : toStringz;
+import std.conv : to;
+
 //version(DESKTOP) {
 version(all) {
     const int GLSL_VERSION = 330;
@@ -63,7 +68,9 @@ void main()
     VrStereoConfig config = LoadVrStereoConfig(device);
 
     // Distortion shader (uses device lens distortion and chroma)
-    Shader distortion = LoadShader(null, TextFormat("resources/distortion%i.fs", GLSL_VERSION));
+    auto fs = (thisExePath().dirName ~ "/../resources/" ~
+            TextFormat("distortion%i.fs", GLSL_VERSION).to!string).buildNormalizedPath.toStringz;
+    Shader distortion = LoadShader(null, fs);
 
     // Update distortion shader with lens and distortion-scale parameters
     SetShaderValue(distortion, GetShaderLocation(distortion, "leftLensCenter"),

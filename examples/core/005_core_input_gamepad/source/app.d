@@ -19,6 +19,10 @@
 
 import raylib;
 
+import std.path : dirName, buildNormalizedPath;
+import std.file : thisExePath;
+import std.string : toStringz;
+
 // NOTE: Gamepad name ID depends on drivers and OS
 const char* XBOX360_LEGACY_NAME_ID = "Xbox Controller";
 version(Raspberry)
@@ -46,8 +50,11 @@ void main()
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - gamepad input");
 
-    Texture2D texPs3Pad = LoadTexture("resources/ps3.png");
-    Texture2D texXboxPad = LoadTexture("resources/xbox.png");
+    auto file1 = (thisExePath().dirName ~ "/../resources/ps3.png").buildNormalizedPath.toStringz;
+    Texture2D texPs3Pad = LoadTexture(file1);
+
+    auto file2 = (thisExePath().dirName ~ "/../resources/xbox.png").buildNormalizedPath.toStringz;
+    Texture2D texXboxPad = LoadTexture(file2);
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
