@@ -3,7 +3,10 @@
 	"description": "RayLib example.",
 	"license": "Zlib",
 	"dependencies": {
-		"raylib-d": "~>4.5.0",
+		"raylib-d": "~>4.5.0"
 	},
-	"libs": [ "raylib" ]
+	"libs": [ "raylib" ],
+	"lflags-posix" : ["-L."],
+	"lflags-osx" : ["-rpath", "@executable_path/"],
+	"lflags-linux" : ["-rpath=$$ORIGIN"]
 }
