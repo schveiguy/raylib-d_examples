@@ -1,0 +1,14 @@
+{
+	"name": "shaders_fog",
+	"description": "RayLib example.",
+	"license": "Zlib",
+	"importPaths": [ "../"],
+	"sourceFiles": [ "../rlights.d"],
+	"dependencies": {
+		"raylib-d": "~>4.5.0"
+	},
+	"libs": [ "raylib" ],
+	"lflags-posix" : ["-L."],
+	"lflags-osx" : ["-rpath", "@executable_path/"],
+	"lflags-linux" : ["-rpath=$$ORIGIN"]
+}
