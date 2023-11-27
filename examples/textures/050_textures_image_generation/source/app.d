@@ -27,8 +27,8 @@ void main()
 
     InitWindow(screenWidth, screenHeight, "raylib [textures] example - procedural images generation");
 
-    Image verticalGradient = GenImageGradientV(screenWidth, screenHeight, Colors.RED, Colors.BLUE);
-    Image horizontalGradient = GenImageGradientH(screenWidth, screenHeight, Colors.RED, Colors.BLUE);
+    Image verticalGradient = GenImageGradientLinear(screenWidth, screenHeight, 0, Colors.RED, Colors.BLUE);
+    Image horizontalGradient = GenImageGradientLinear(screenWidth, screenHeight, 90, Colors.RED, Colors.BLUE);
     Image radialGradient = GenImageGradientRadial(screenWidth, screenHeight, 0.0f, Colors.WHITE, Colors.BLACK);
     Image checked = GenImageChecked(screenWidth, screenHeight, 32, 32, Colors.RED, Colors.BLUE);
     Image whiteNoise = GenImageWhiteNoise(screenWidth, screenHeight, 0.5f);

@@ -55,7 +55,7 @@ void main()
     Vector3 position = { 0.0f, 0.0f, 0.0f };                 // Set model position
 
     // Load animation data
-    uint animsCount = 0;
+    int animsCount = 0;
     auto file3 = (thisExePath().dirName ~ "/../resources/models/iqm/guyanim.iqm").buildNormalizedPath.toStringz;
     ModelAnimation *anims = LoadModelAnimations(file3, &animsCount);
     int animFrameCounter = 0;

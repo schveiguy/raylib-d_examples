@@ -49,7 +49,7 @@ void main()
     Model model = LoadModel(file1);
 
     // Load gltf model animations
-    uint animsCount = 0;
+    int animsCount = 0;
     uint animIndex = 0;
     uint animCurrentFrame = 0;
 

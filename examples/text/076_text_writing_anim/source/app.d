@@ -55,6 +55,7 @@ void main()
 
             ClearBackground(Colors.RAYWHITE);
 
+            SetTextLineSpacing(32);
             DrawText(TextSubtext(&message[0], 0, framesCounter/10), 210, 160, 20, Colors.MAROON);
 
             DrawText("PRESS [ENTER] to RESTART!", 240, 260, 20, Colors.LIGHTGRAY);

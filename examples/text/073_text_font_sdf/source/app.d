@@ -44,7 +44,7 @@ void main()
     const string msg = "Signed Distance Fields";
 
     // Loading file to memory
-    uint fileSize = 0;
+    int fileSize = 0;
 
     auto file1 = (thisExePath().dirName ~ "/../resources/anonymous_pro_bold.ttf").buildNormalizedPath.toStringz;
     ubyte *fileData = LoadFileData(file1, &fileSize);

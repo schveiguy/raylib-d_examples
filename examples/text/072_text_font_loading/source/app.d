@@ -81,11 +81,13 @@ void main()
 
             if (!useTtf)
             {
+                SetTextLineSpacing(fontBm.baseSize);
                 DrawTextEx(fontBm, msg.toStringz, Vector2( 20.0f, 100.0f ), cast(float)fontBm.baseSize, 2, Colors.MAROON);
                 DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, Colors.GRAY);
             }
             else
             {
+                SetTextLineSpacing(fontTtf.baseSize);
                 DrawTextEx(fontTtf, msg.toStringz, Vector2( 20.0f, 100.0f ), cast(float)fontTtf.baseSize, 2, Colors.LIME);
                 DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, Colors.GRAY);
             }
